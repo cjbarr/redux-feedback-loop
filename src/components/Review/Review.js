@@ -18,7 +18,9 @@ class Review extends Component {
             <div>
                 <h1>Your Feedback for today:</h1>
                 <h3>Your Current Feelings:</h3>
+                <p>{this.props.reduxState.feelingReducer}</p>
                 <h3>Your Current Understanding:</h3>
+                <p>{this.props.reduxState.understandingReducer}</p>
                 <h3>Your Current Support:</h3>
                 <h3>Your Current Comments:</h3>
             

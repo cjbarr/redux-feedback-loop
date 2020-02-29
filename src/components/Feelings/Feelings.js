@@ -4,12 +4,31 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 class Feelings extends Component {
 
+state={
+    feeling:''
+}
+
+
+
+    handleChange = (event, typeofChange) => {
+        this.setState({
+            feeling: event.target.value
+            },
+        );
+    }
 
 
     buttonClick = () =>{
+        console.log(this.state.feeling);
+        
+        this.props.dispatch({
+            type:'ADD_FEELING',
+            payload:this.state.feeling
+        })
         this.props.history.push('/understanding')
 
     }
+    
     render() {
 
 
@@ -17,7 +36,7 @@ class Feelings extends Component {
         return (
             <div>
                 <h1>Hi friend, how are you feeling today?</h1>
-                <select id="feeling" name="feeling">
+                <select id="feeling" name="feeling" onChange={this.handleChange}>
                     <option value="1">1 - Pretty Low</option>
                     <option value="2">2 - Not Great</option>
                     <option value="3">3 - Fine</option>

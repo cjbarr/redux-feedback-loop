@@ -5,11 +5,25 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 class Understanding extends Component {
 
 
+
+    handleChange = (event, typeofChange) => {
+        this.setState({
+            understanding: event.target.value
+        },
+        );
+    }
+
+
     buttonClick = () => {
+        console.log(this.state.understanding);
+
+        this.props.dispatch({
+            type: 'ADD_UNDERSTANDING',
+            payload: this.state.understanding
+        })
         this.props.history.push('/support')
 
     }
-
     render() {
 
 
@@ -17,7 +31,7 @@ class Understanding extends Component {
         return (
             <div>
                 <h1>How about the material we covered?</h1>
-                <select id="feeling" name="feeling">
+                <select id="feeling" name="feeling" onChange={this.handleChange}>
                     <option value="1">1 - I am completely lost</option>
                     <option value="2">2 - Somewhat confused</option>
                     <option value="3">3 - I feel alright about it</option>

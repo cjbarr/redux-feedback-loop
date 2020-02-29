@@ -11,6 +11,9 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 
 class App extends Component {
+
+
+
   render() {
     return (
       <div className="App">

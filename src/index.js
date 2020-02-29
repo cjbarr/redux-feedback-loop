@@ -23,10 +23,26 @@ const understandingReducer = (state = [], action) => {
     return state
 }
 
+const supportReducer = (state = [], action) => {
+    if (action.type === 'ADD_SUPPORT') {
+        return [...state, action.payload];
+    }
+    return state
+}
+
+const commentsReducer = (state = [], action) => {
+    if (action.type === 'ADD_COMMENT') {
+        return [...state, action.payload];
+    }
+    return state
+}
+
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
-        understandingReducer
+        understandingReducer,
+        supportReducer,
+        commentsReducer
     }),
 );
 

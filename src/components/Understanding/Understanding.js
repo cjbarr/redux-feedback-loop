@@ -15,7 +15,7 @@ class Understanding extends Component {
 
 
     buttonClick = () => {
-        console.log(this.state.understanding);
+       
 
         this.props.dispatch({
             type: 'ADD_UNDERSTANDING',

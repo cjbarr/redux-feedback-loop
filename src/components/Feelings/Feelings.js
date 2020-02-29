@@ -19,7 +19,7 @@ state={
 
 
     buttonClick = () =>{
-        console.log(this.state.feeling);
+       
         
         this.props.dispatch({
             type:'ADD_FEELING',
@@ -28,7 +28,7 @@ state={
         this.props.history.push('/understanding')
 
     }
-    
+
     render() {
 
 

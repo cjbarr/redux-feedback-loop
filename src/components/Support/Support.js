@@ -4,8 +4,27 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 class Support extends Component {
 
+    state = {
+        support: ''
+    }
+
+
+
+    handleChange = (event, typeofChange) => {
+        this.setState({
+            support: event.target.value
+        },
+        );
+    }
+
 
     buttonClick = () => {
+     
+
+        this.props.dispatch({
+            type: 'ADD_SUPPORT',
+            payload: this.state.support
+        })
         this.props.history.push('/comments')
 
     }
@@ -17,7 +36,7 @@ class Support extends Component {
         return (
             <div>
                 <h1>Do you feel supported by our staff?</h1>
-                <select id="feeling" name="feeling">
+                <select id="feeling" name="feeling" onChange={this.handleChange}>
                     <option value="1">1 - Who?</option>
                     <option value="2">2 - They're fine I guess</option>
                     <option value="3">3 - Sure.</option>

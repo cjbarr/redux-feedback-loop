@@ -22,7 +22,9 @@ class Review extends Component {
                 <h3>Your Current Understanding:</h3>
                 <p>{this.props.reduxState.understandingReducer}</p>
                 <h3>Your Current Support:</h3>
+                <p>{this.props.reduxState.supportReducer}</p>
                 <h3>Your Current Comments:</h3>
+                <p>{this.props.reduxState.commentsReducer}</p>
             
                 <button onClick={this.buttonClick}>Submit Feedback</button>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 
 class Confirmation extends Component {
@@ -23,7 +24,7 @@ class Confirmation extends Component {
                 <h1>Thank you!</h1>
             <h3>Your Feedback has been submitted.</h3>
 
-                <button onClick={this.buttonClick}>Back to Home</button>
+                <Button size="small" variant="contained" color="primary" disableElevation onClick={this.buttonClick}>Back to Home</Button>
     
 
             </div>

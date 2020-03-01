@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 class Review extends Component {
 
@@ -49,8 +50,14 @@ class Review extends Component {
                 <h3>Your Current Comments:</h3>
                 <p>{this.props.reduxState.commentsReducer}</p>
             
-                <button onClick={this.buttonClick}>Submit Feedback</button>
-                <div><button onClick={this.backClick}>Back</button></div>
+                <div></div>
+                <br></br>
+                <Button size="medium" variant="contained" color="primary" disableElevation onClick={this.buttonClick}>Submit Feedback</Button>
+                <br></br>
+                <br></br>
+                <div></div>
+                <Button size="small" variant="contained" color="secondary" disableElevation onClick={this.backClick}>Back</Button>
+
             
             </div>
         )

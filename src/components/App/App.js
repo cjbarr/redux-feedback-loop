@@ -3,12 +3,15 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
+
+
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Confirmation from '../Confirmation/Confirmation';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
 
@@ -29,6 +32,7 @@ class App extends Component {
           <Route exact path="/comments" component={Comments} />
           <Route exact path="/review" component={Review} />
           <Route exact path="/confirmation" component={Confirmation} />
+          <Route exact path="/admin" component={Admin} />
 
 
         

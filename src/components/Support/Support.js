@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 
 class Support extends Component {
@@ -47,9 +48,14 @@ class Support extends Component {
                     <option value="4">4 - They make my day better!</option>
                     <option value="5">5 - All staff are invited to my wedding</option>
                 </select>
-                <button onClick={this.buttonClick}>Next</button>
-                <div><button onClick={this.backClick}>Back</button></div>
-        
+                <div></div>
+                <br></br>
+                <Button size="medium" variant="contained" color="primary" disableElevation onClick={this.buttonClick}>Next</Button>
+                <br></br>
+                <br></br>
+                <div></div>
+                <Button size="small" variant="contained" color="secondary" disableElevation onClick={this.backClick}>Back</Button>
+
             </div>
         )
     }

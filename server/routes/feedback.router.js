@@ -15,5 +15,19 @@ router.post('/', (req, res) => {
             res.sendStatus(500);
         })
 })
+
+
+
+router.get('/', (req, res) => {
+    console.log('in router/get')
+    let queryString = 'SELECT * FROM feedback ORDER BY "id" DESC'
+    pool.query(queryString).then((results) => {
+        res.send(results.rows);
+    }).catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+}) 
+
    
 module.exports = router;

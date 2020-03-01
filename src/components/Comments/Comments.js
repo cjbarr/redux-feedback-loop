@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 class Comments extends Component {
 
@@ -41,9 +42,14 @@ state = {
             <div>
                 <h1>Is there anything you'd like to talk about?</h1>
                 <textarea rows="5" cols="50" onChange={this.handleChange} />
-                <button onClick={this.buttonClick}>Next</button>
-                <div><button onClick={this.backClick}>Back</button></div>
-            </div>
+                <div></div>
+                <br></br>
+                <Button size="medium" variant="contained" color="primary" disableElevation onClick={this.buttonClick}>Next</Button>
+                <br></br>
+                <br></br>
+                <div></div>
+                <Button size="small" variant="contained" color="secondary" disableElevation onClick={this.backClick}>Back</Button>
+             </div>
         )
     }
 }

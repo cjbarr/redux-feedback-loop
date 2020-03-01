@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class Review extends Component {
@@ -11,27 +10,26 @@ class Review extends Component {
 
 
     buttonClick = () => {
+        let objectToSend={feeling: this.props.reduxState.feelingReducer,
+            understanding: this.props.reduxState.understandingReducer,
+            support: this.props.reduxState.supportReducer,
+            comments: this.props.reduxState.commentsReducer
+                }
 
-        // Axios({
-        //     method: 'POST',
-        //     url: '/api/order',
-        //     data: objectToSend
-        // }).then((response) => {
-        //     console.log(response);
-        //     alert('Your order has been submitted!');
-        //    
-
-
-                    this.props.dispatch({
+        Axios({
+            method: 'POST',
+            url: '/feedback',
+            data: objectToSend
+        }).then((response) => {
+            console.log(response);
+            this.props.dispatch({
                     type: 'NEW_FEEDBACK',
-                })
+                    })
                 this.props.history.push('/confirmation')
-        // }).catch((error) => {
-        //     console.log
-  
-    
-    // })
-}
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
 
     
 

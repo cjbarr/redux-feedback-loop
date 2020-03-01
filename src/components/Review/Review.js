@@ -25,7 +25,7 @@ class Review extends Component {
                     this.props.dispatch({
                     type: 'NEW_FEEDBACK',
                 })
-                this.props.history.push('/')
+                this.props.history.push('/confirmation')
         // }).catch((error) => {
         //     console.log
   

@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 class Feelings extends Component {
 
 state={
-    feeling:''
+    feeling:'0'
 }
 
 
@@ -17,9 +17,12 @@ state={
         );
     }
 
+    backClick =()=>{
+        this.props.history.push('/')
+    }
 
     buttonClick = () =>{
-       
+       if (this.state.feeling==='0'){alert('A selection must be made!');return};
         
         this.props.dispatch({
             type:'ADD_FEELING',
@@ -37,6 +40,7 @@ state={
             <div>
                 <h1>Hi friend, how are you feeling today?</h1>
                 <select id="feeling" name="feeling" onChange={this.handleChange}>
+                    <option value="0"></option>
                     <option value="1">1 - Pretty Low</option>
                     <option value="2">2 - Not Great</option>
                     <option value="3">3 - Fine</option>
@@ -44,6 +48,7 @@ state={
                     <option value="5">5 - Fantastic</option>
                 </select>
                 <button onClick={this.buttonClick}>Next</button>
+        
                  </div>
         )
     }

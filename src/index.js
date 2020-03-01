@@ -8,31 +8,47 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 
-const feelingReducer =(state=[], action) =>{
+const feelingReducer =(state='', action) =>{
     if (action.type === 'ADD_FEELING'){
-        return [...state, action.payload];
+        return state = action.payload;
+    }
+    if (action.type === 'NEW_FEEDBACK') {
+        state = '';
+        return state
     }
     return state
 }
 
 
-const understandingReducer = (state = [], action) => {
+const understandingReducer = (state = '', action) => {
     if (action.type === 'ADD_UNDERSTANDING') {
-        return [...state, action.payload];
+        return state = action.payload;
+    }
+    if(action.type === 'NEW_FEEDBACK'){
+        state='';
+        return state
     }
     return state
 }
 
-const supportReducer = (state = [], action) => {
+const supportReducer = (state = '', action) => {
     if (action.type === 'ADD_SUPPORT') {
-        return [...state, action.payload];
+        return state = action.payload;
+    }
+    if (action.type === 'NEW_FEEDBACK') {
+        state = [];
+        return state
     }
     return state
 }
 
-const commentsReducer = (state = [], action) => {
+const commentsReducer = (state = '', action) => {
     if (action.type === 'ADD_COMMENT') {
-        return [...state, action.payload];
+        return state = action.payload;
+    }
+    if (action.type === 'NEW_FEEDBACK') {
+        state = '';
+        return state
     }
     return state
 }

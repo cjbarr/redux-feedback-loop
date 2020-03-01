@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
+state = {
+    comment:''
+}
 
 
-    state = {
-        comment: ''
-    }
 
 
 
@@ -18,6 +18,9 @@ class Comments extends Component {
         );
     }
 
+    backClick = () => {
+        this.props.history.push('/support')
+    }
 
     buttonClick = () => {
 
@@ -39,6 +42,7 @@ class Comments extends Component {
                 <h1>Is there anything you'd like to talk about?</h1>
                 <textarea rows="5" cols="50" onChange={this.handleChange} />
                 <button onClick={this.buttonClick}>Next</button>
+                <div><button onClick={this.backClick}>Back</button></div>
             </div>
         )
     }

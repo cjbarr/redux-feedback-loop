@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Axios from 'axios';
 
 class Review extends Component {
 
+    backClick = () => {
+        this.props.history.push('/support')
+    }
 
 
     buttonClick = () => {
-        this.props.history.push('/')
 
-    }
+        // Axios({
+        //     method: 'POST',
+        //     url: '/api/order',
+        //     data: objectToSend
+        // }).then((response) => {
+        //     console.log(response);
+        //     alert('Your order has been submitted!');
+        //    
+
+
+                    this.props.dispatch({
+                    type: 'NEW_FEEDBACK',
+                })
+                this.props.history.push('/')
+        // }).catch((error) => {
+        //     console.log
+  
+    
+    // })
+}
+
+    
+
     render() {
 
 
@@ -27,6 +52,8 @@ class Review extends Component {
                 <p>{this.props.reduxState.commentsReducer}</p>
             
                 <button onClick={this.buttonClick}>Submit Feedback</button>
+                <div><button onClick={this.backClick}>Back</button></div>
+            
             </div>
         )
     }

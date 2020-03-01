@@ -6,10 +6,7 @@ class Comments extends Component {
 
 state = {
     comment:''
-}
-
-
-
+}//initial to prevent null or undefined if they input nothing
 
 
     handleChange = (event, typeofChange) => {
@@ -17,11 +14,11 @@ state = {
             comment: event.target.value
         },
         );
-    }
+    }//saves value of text input
 
     backClick = () => {
         this.props.history.push('/support')
-    }
+    }//pushes back to support page
 
     buttonClick = () => {
 
@@ -32,7 +29,7 @@ state = {
         })
         this.props.history.push('/review')
 
-    }
+    }//captures input to reducer, takes to review page
 
     render() {
 

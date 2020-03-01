@@ -4,7 +4,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 
 
-
+//importing of all of my components
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -25,7 +25,7 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <Router>     
-
+            {/* routes for all of my components, feelings page acts as homepage as simple / */}
           <Route exact path="/" component={Feelings} />
           <Route exact path="/understanding" component={Understanding} />
           <Route exact path="/support" component={Support} />

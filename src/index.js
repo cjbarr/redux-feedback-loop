@@ -7,6 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+//could probably have done all of these in one router using an object with keys,
+//but I wanted to practice working across multiple states :)
 
 const feelingReducer =(state='', action) =>{
     if (action.type === 'ADD_FEELING'){
@@ -17,7 +19,7 @@ const feelingReducer =(state='', action) =>{
         return state
     }
     return state
-}
+}//router for feeling page capture
 
 
 const understandingReducer = (state = '', action) => {
@@ -29,7 +31,7 @@ const understandingReducer = (state = '', action) => {
         return state
     }
     return state
-}
+}//understanding page input
 
 const supportReducer = (state = '', action) => {
     if (action.type === 'ADD_SUPPORT') {
@@ -40,7 +42,7 @@ const supportReducer = (state = '', action) => {
         return state
     }
     return state
-}
+}//support page input
 
 const commentsReducer = (state = '', action) => {
     if (action.type === 'ADD_COMMENT') {
@@ -51,7 +53,7 @@ const commentsReducer = (state = '', action) => {
         return state
     }
     return state
-}
+}//comment page input, can be blank.
 
 const storeInstance = createStore(
     combineReducers({

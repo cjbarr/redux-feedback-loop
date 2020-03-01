@@ -12,7 +12,7 @@ class Confirmation extends Component {
         this.props.history.push('/')
 
     }
-
+//pushes back to home
 
 
     render() {

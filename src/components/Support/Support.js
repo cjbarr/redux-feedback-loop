@@ -10,7 +10,7 @@ class Support extends Component {
     }
 
 
-
+//saves state as selected input
     handleChange = (event, typeofChange) => {
         this.setState({
             support: event.target.value
@@ -20,7 +20,7 @@ class Support extends Component {
 
     backClick = () => {
         this.props.history.push('/understanding')
-    }
+    }//goes back to understanding
 
     buttonClick = () => {
      
@@ -31,7 +31,7 @@ class Support extends Component {
         })
         this.props.history.push('/comments')
 
-    }
+    }//pushes forward with state dispatched to reducer, takes to comments page
 
     render() {
 

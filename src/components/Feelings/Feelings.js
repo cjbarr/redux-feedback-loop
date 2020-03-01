@@ -9,7 +9,7 @@ class Feelings extends Component {
 state={
     feeling:'0'
 }
-
+//initial state prevents empty response
 
 
     handleChange = (event, typeofChange) => {
@@ -17,11 +17,7 @@ state={
             feeling: event.target.value
             },
         );
-    }
-
-    backClick =()=>{
-        this.props.history.push('/')
-    }
+    }//handles change on selector
 
     buttonClick = () =>{
        if (this.state.feeling==='0'){alert('A selection must be made!');return};
@@ -32,7 +28,7 @@ state={
         })
         this.props.history.push('/understanding')
 
-    }
+    }//saves selected input to reducer, pushes page to next input, understanding
 
     render() {
 

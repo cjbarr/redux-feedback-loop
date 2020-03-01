@@ -30,8 +30,7 @@ class Review extends Component {
         })
     }
 
-  
-  
+
 
     render() {
 

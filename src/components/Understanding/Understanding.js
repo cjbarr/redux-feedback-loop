@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 
 class Understanding extends Component {
 
+
     state={
         understanding:'0'
     }
@@ -15,11 +16,11 @@ class Understanding extends Component {
             understanding: event.target.value
         },
         );
-    }
+    }//handles selector change to set state as selected value
 
     backClick = () => {
         this.props.history.push('/')
-    }
+    }//pushes back to feelings
 
     buttonClick = () => {
         if (this.state.understanding === '0') { alert('A selection must be made!'); return };
@@ -30,7 +31,7 @@ class Understanding extends Component {
         })
         this.props.history.push('/support')
 
-    }
+    }//dispatches state to reducer, changes to support page
     render() {
 
 

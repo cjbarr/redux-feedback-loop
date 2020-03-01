@@ -6,10 +6,10 @@ import Button from '@material-ui/core/Button';
 class Review extends Component {
 
     backClick = () => {
-        this.props.history.push('/support')
+        this.props.history.push('/comments')
     }
 
-
+//creates an object to send that grabs all the saved reducer values
     buttonClick = () => {
         let objectToSend={feeling: this.props.reduxState.feelingReducer,
             understanding: this.props.reduxState.understandingReducer,
@@ -25,8 +25,8 @@ class Review extends Component {
             console.log(response);
             this.props.dispatch({
                     type: 'NEW_FEEDBACK',
-                    })
-                this.props.history.push('/confirmation')
+                    })//clears out reducers on successful post request
+                this.props.history.push('/confirmation')//pushes to confirmation page
         }).catch((error) => {
             console.log(error)
         })
